@@ -49,7 +49,5 @@ build:
         name: scan project
         code: |
           echo "Scanning project ..."
-          ls $WERCKER_STEP_ROOT
-          # pwd
-          # ls
+          pwd
 
