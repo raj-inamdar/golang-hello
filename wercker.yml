@@ -48,8 +48,6 @@ build:
     - script:
         name: scan project
         code: |
-          echo "Scanning project ..."
-          pwd
-          ls
-          java -version
+          echo "WERCKER_CACHE_DIR: $WERCKER_CACHE_DIR"
+          find $WERCKER_CACHE_DIR -type f
 
