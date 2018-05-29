@@ -50,4 +50,5 @@ build:
         code: |
           echo "Scanning project ..."
           pwd
+          ls
 
