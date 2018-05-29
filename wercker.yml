@@ -43,3 +43,10 @@ build:
         name: go test
         code: |
           go test ./...
+
+    # Scan the project
+    - script:
+        name: scan project
+        code: |
+          echo "Scanning project ..."
+
