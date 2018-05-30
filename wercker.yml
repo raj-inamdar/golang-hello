@@ -44,10 +44,22 @@ build:
         code: |
           go test ./...
 
-    # Scan the project
+# Scan the project
+scan:
+  box:
+    id: phx.ocir.io/kubernetessecurity/sscm/sscm-go-mvn-jdk8
+    username: $SSCM_OCIR_PULLER_USER
+    password: $SSCM_OCIR_PULLER_SECRET
+    tag: latest
+    registry: phx.ocir.io
+
+  steps:
     - script:
-        name: scan project
-        code: |
-          echo "WERCKER_CACHE_DIR: $WERCKER_CACHE_DIR"
-          find $WERCKER_CACHE_DIR -type f
+      name: echo
+      code: echo "Scan project"
+
+  steps:
+    - script:
+      name: check
+      code: ls /var/lib/scripts/sscm-scanner
 
