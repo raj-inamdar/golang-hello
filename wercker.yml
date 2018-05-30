@@ -55,11 +55,6 @@ scan:
 
   steps:
     - script:
-      name: echo
-      code: echo "Scan project"
-
-  steps:
-    - script:
-      name: check
-      code: ls /var/lib/scripts/sscm-scanner
+      name: perform scan
+      code: /var/lib/scripts/sscm-scanner/run_sscm_scanner.sh
 
