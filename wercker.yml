@@ -46,15 +46,16 @@ build:
 
 # Scan the project
 scan:
-  box:
-    id: phx.ocir.io/kubernetessecurity/sscm/sscm-go-mvn-jdk8
-    username: $SSCM_OCIR_PULLER_USER
-    password: $SSCM_OCIR_PULLER_SECRET
-    tag: latest
-    registry: phx.ocir.io
-
+#  box:
+#    id: phx.ocir.io/kubernetessecurity/sscm/sscm-go-mvn-jdk8
+#    username: $SSCM_OCIR_PULLER_USER
+#    password: $SSCM_OCIR_PULLER_SECRET
+#    tag: latest
+#    registry: phx.ocir.io
+#
   steps:
     - script:
       name: perform scan
-      code: /var/lib/scripts/sscm-scanner/run_sscm_scanner.sh
+      # code: /var/lib/scripts/sscm-scanner/run_sscm_scanner.sh
+      curl http://130.35.129.76:8080/v1alpha1/projects
 
