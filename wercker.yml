@@ -55,8 +55,12 @@ scan:
 #
   steps:
     - script:
-        name: perform scan
+        name: Perform scan
         # code: /var/lib/scripts/sscm-scanner/run_sscm_scanner.sh
         code: |
           curl http://130.35.129.76:8080/v1alpha1/projects
 
+    - script:
+        name: ping proxy
+        code: |
+          ping  -c 1 www-proxy-hqdc.us.oracle.com 
