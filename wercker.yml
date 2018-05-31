@@ -55,8 +55,8 @@ scan:
 #
   steps:
     - script:
-      name: perform scan
-      # code: /var/lib/scripts/sscm-scanner/run_sscm_scanner.sh
-      code: |
-        curl http://130.35.129.76:8080/v1alpha1/projects
+        name: perform scan
+        # code: /var/lib/scripts/sscm-scanner/run_sscm_scanner.sh
+        code: |
+          curl http://130.35.129.76:8080/v1alpha1/projects
 
