@@ -87,7 +87,7 @@ prepare() {
   if [ $? != 0 ];then
     echo "Creating project projects/$GRAFEAS_PROJECT_NAME"
     echo "curl -v -X POST $SERVER_BASE_URL/v1alpha1/projects -d '{\"name\": \"projects/$GRAFEAS_PROJECT_NAME\" }'"
-    curl -v -X POST $SERVER_BASE_URL/v1alpha1/projects -d '{"name": "projects/$GRAFEAS_PROJECT_NAME" }'
+    curl -v -X POST $SERVER_BASE_URL/v1alpha1/projects -d "{\"name\": \"projects/$GRAFEAS_PROJECT_NAME\" }"
   fi
   echo "curl -v $SERVER_BASE_URL/v1alpha1/projects "
   curl -v $SERVER_BASE_URL/v1alpha1/projects 
