@@ -82,13 +82,15 @@ get_sscm_scanner_jar() {
 
 prepare() {
   echo "Preparing ..."
-  echo "curl $SERVER_BASE_URL/v1alpha1/projects/$GRAFEAS_PROJECT_NAME | grep projects/$GRAFEAS_PROJECT_NAME > /dev/null"
-  curl $SERVER_BASE_URL/v1alpha1/projects/$GRAFEAS_PROJECT_NAME | grep projects/$GRAFEAS_PROJECT_NAME > /dev/null
+  echo "curl $SERVER_BASE_URL/v1alpha1/projects/$GRAFEAS_PROJECT_NAME | grep projects/$GRAFEAS_PROJECT_NAME "
+  curl $SERVER_BASE_URL/v1alpha1/projects/$GRAFEAS_PROJECT_NAME | grep projects/$GRAFEAS_PROJECT_NAME 
   if [ $? != 0 ];then
     echo "Creating project projects/$GRAFEAS_PROJECT_NAME"
     echo "curl -X POST $SERVER_BASE_URL/v1alpha1/projects -d '{\"name\": \"projects/$GRAFEAS_PROJECT_NAME\" }'"
     curl -X POST $SERVER_BASE_URL/v1alpha1/projects -d '{"name": "projects/$GRAFEAS_PROJECT_NAME" }'
   fi
+  echo "curl $SERVER_BASE_URL/v1alpha1/projects/$GRAFEAS_PROJECT_NAME | grep projects/$GRAFEAS_PROJECT_NAME "
+  curl $SERVER_BASE_URL/v1alpha1/projects/$GRAFEAS_PROJECT_NAME | grep projects/$GRAFEAS_PROJECT_NAME 
 }
 
 performScan() {
