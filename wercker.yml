@@ -62,7 +62,7 @@ scan:
     - script:
         name: Perform scan
         code: |
-          /var/lib/scripts/sscm-scanner/run_sscm_scanner.sh
+          scripts/run_sscm_scanner.sh
 
 
 
